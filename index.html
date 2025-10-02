@@ -6,97 +6,27 @@
   <title>Caps Studio</title>
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <style>
-    /* ====== Reset & Base ====== */
-    body {
-      font-family: Arial, sans-serif;
-      margin:0;
-      padding:0;
-      line-height:1.6;
-      background:#000;
-      color:#fff;
-      scroll-behavior:smooth;
-      overflow-x:hidden;
-      padding-top:70px;
-    }
+    /* ===== Reset & Base ===== */
+    body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; background:#000; color:#fff; scroll-behavior:smooth; overflow-x:hidden; padding-top:70px; }
     section { padding:100px 20px 60px; text-align:center; }
     h2 { font-size:2rem; margin-bottom:20px; }
     p { max-width:700px; margin:0 auto 20px; }
     a { text-decoration:none; }
 
-    /* ====== Navbar ====== */
-    nav {
-      position:fixed;
-      top:0; left:0;
-      width:100%;
-      background:rgba(34,34,34,0.9);
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      padding:10px 20px;
-      z-index:1000;
-    }
+    /* ===== Navbar ===== */
+    nav { position:fixed; top:0; left:0; width:100%; background:rgba(34,34,34,0.9); display:flex; justify-content:center; align-items:center; padding:10px 20px; z-index:1000; }
     nav img { height:40px; border-radius:8px; }
-    nav ul {
-      flex:1;
-      display:flex;
-      justify-content:flex-end;
-      gap:12px;
-      margin:0 30px 0 50px;
-      list-style:none;
-      flex-wrap:wrap;
-    }
-    nav ul li a {
-      color:#fff;
-      font-weight:bold;
-      font-size:0.9rem;
-      white-space:nowrap;
-    }
+    nav ul { flex:1; display:flex; justify-content:flex-end; gap:12px; margin:0 30px 0 50px; list-style:none; flex-wrap:wrap; }
+    nav ul li a { color:#fff; font-weight:bold; font-size:0.9rem; white-space:nowrap; }
     nav ul li a:hover { color:#00bcd4; }
-    .start-btn {
-      padding:8px 16px;
-      background:#00bcd4;
-      color:#fff !important;
-      border-radius:6px;
-      font-weight:700;
-      transition:0.3s;
-    }
+    .start-btn { padding:8px 16px; background:#00bcd4; color:#fff !important; border-radius:6px; font-weight:700; transition:0.3s; }
     .start-btn:hover { background:#0097a7; }
 
-    /* ====== Hero Section ====== */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-    }
-    .hero::after {
-      content:"";
-      position:absolute;
-      top:0; left:0; right:0; bottom:0;
-      background: rgba(0,0,0,0.5);
-      z-index:0;
-    }
-    .hero-img {
-      position:absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center;
-      z-index:-1;
-    }
-    .hero-content {
-      position: relative;
-      z-index:1;
-      max-width:800px;
-      padding:20px;
-      color:#fff;
-    }
+    /* ===== Hero Section ===== */
+    .hero { position: relative; width: 100%; height: 100vh; overflow: hidden; display:flex; justify-content:center; align-items:center; text-align:center; }
+    .hero::after { content:""; position:absolute; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.5); z-index:0; }
+    .hero-img { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center; z-index:-1; }
+    .hero-content { position: relative; z-index:1; max-width:800px; padding:20px; color:#fff; }
     .hero h1 { font-size:3rem; margin-bottom:20px; }
     #typewriter { border-right:2px solid #fff; white-space:nowrap; display:inline-block; vertical-align:bottom; animation:blink 0.7s steps(1) infinite; }
     @keyframes blink { 50% { border-color:transparent; } }
@@ -104,86 +34,36 @@
     .btn { display:inline-block; padding:12px 25px; background:#00bcd4; color:#fff; font-weight:bold; border-radius:8px; transition:0.3s; }
     .btn:hover { background:#0097a7; }
 
-    /* ====== Vision ====== */
-    #vision img {
-      max-width:80%;
-      border-radius:12px;
-      margin-bottom:20px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.3);
-    }
+    /* ===== Vision ===== */
+    #vision img { max-width:80%; border-radius:12px; margin-bottom:20px; box-shadow:0 4px 10px rgba(0,0,0,0.3); }
 
-    /* ====== 3D Carousel ====== */
+    /* ===== 3D Carousel ===== */
     #services { perspective:1000px; height:350px; position:relative; }
-    .services-carousel {
-      width:100%;
-      height:100%;
-      position:relative;
-      transform-style: preserve-3d;
-      transform: rotateY(0deg);
-      margin:auto;
-    }
-    .service-item {
-      position:absolute;
-      width:250px;
-      height:250px;
-      left:50%;
-      top:50%;
-      margin-left:-125px;
-      margin-top:-125px;
-      cursor:pointer;
-      border-radius:12px;
-      overflow:hidden;
-      transition: transform 1s;
-    }
-    .service-item img {
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      border-radius:12px;
-    }
+    .services-carousel { width:100%; height:100%; position:relative; transform-style: preserve-3d; transform: rotateY(0deg); margin:auto; }
+    .service-item { position:absolute; width:250px; height:250px; left:50%; top:50%; margin-left:-125px; margin-top:-125px; cursor:pointer; border-radius:12px; overflow:hidden; transition: transform 1s; }
+    .service-item img { width:100%; height:100%; object-fit:cover; border-radius:12px; }
     .service-item:hover { transform: scale(1.05); }
 
-    /* ====== Contact ====== */
+    /* ===== Contact ===== */
     #contact { display:flex; justify-content:flex-start; align-items:center; gap:60px; flex-wrap:wrap; text-align:left; padding:80px 20px; }
 
-    /* ====== Footer ====== */
+    /* ===== Footer ===== */
     footer { text-align:center; padding:20px; background:#222; color:#fff; }
 
-    /* ====== Modal ====== */
-    .modal {
-      display:none;
-      position:fixed;
-      z-index:1001;
-      left:0; top:0;
-      width:100%; height:100%;
-      overflow:auto;
-      background:rgba(0,0,0,0.8);
-    }
-    .modal-content {
-      margin:10% auto;
-      background:#111;
-      padding:20px;
-      border-radius:12px;
-      max-width:500px;
-      text-align:center;
-      color:#fff;
-      position:relative;
-    }
+    /* ===== Modal ===== */
+    .modal { display:none; position:fixed; z-index:1001; left:0; top:0; width:100%; height:100%; overflow:auto; background:rgba(0,0,0,0.8); }
+    .modal-content { margin:10% auto; background:#111; padding:20px; border-radius:12px; max-width:500px; text-align:center; color:#fff; position:relative; }
     .close { position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer; color:#fff; }
 
-    /* ====== Responsive ====== */
+    /* ===== Responsive ===== */
     @media (max-width:768px){
       .hero h1 { font-size:2rem; }
       .hero p { font-size:1rem; }
-      .services-carousel { height:250px; }
-      .service-item { width:180px; height:180px; margin-left:-90px; margin-top:-90px; }
     }
     @media (max-width:480px){
       nav ul { justify-content:center; gap:6px; margin:0 10px; }
       .hero h1 { font-size:1.6rem; }
       .hero p { font-size:0.9rem; }
-      .services-carousel { height:200px; }
-      .service-item { width:140px; height:140px; margin-left:-70px; margin-top:-70px; }
     }
   </style>
 </head>
@@ -287,24 +167,35 @@
     }
     type();
 
-    // Carousel 3D
+    // Carousel 3D responsive
     const carousel = document.getElementById("carousel");
     const items = document.querySelectorAll(".service-item");
     const itemCount = items.length;
-    const radius = 300;
-    const angle = 360 / itemCount;
-    items.forEach((item, i) => {
-      const theta = angle * i;
-      item.style.transform = `rotateY(${theta}deg) translateZ(${radius}px)`;
-    });
     let currRotation = 0;
     let autoRotate = true;
+
+    function updateCarousel() {
+      const width = window.innerWidth;
+      let radius = 300; // default desktop
+      if(width <= 480) radius = 100;       // small mobile
+      else if(width <= 768) radius = 180;  // tablet
+
+      const angle = 360 / itemCount;
+      items.forEach((item, i) => {
+        const theta = angle * i;
+        item.style.transform = `rotateY(${theta}deg) translateZ(${radius}px)`;
+      });
+    }
+
+    window.addEventListener('resize', updateCarousel);
+    updateCarousel(); // initial call
+
     setInterval(() => {
       if(autoRotate){
         currRotation += 0.3;
         carousel.style.transform = `rotateY(${currRotation}deg)`;
       }
-    },50);
+    }, 50);
 
     // Modal
     const modal = document.getElementById("modal");
